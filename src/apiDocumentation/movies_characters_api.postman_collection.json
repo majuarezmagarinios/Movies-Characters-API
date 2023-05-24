@@ -1,0 +1,935 @@
+{
+	"info": {
+		"_postman_id": "16a57861-38ab-450b-81f7-7e8eacf55635",
+		"name": "movies_characters_api",
+		"description": "World Of Disney API v1.0  \nDescription: This is a REST API project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16366895"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"a@example.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Test Firstname\",\r\n    \"lastname\": \"Test Lastname\",\r\n    \"email\": \"a@example.com\",\r\n    \"password\": \"1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Character",
+			"item": [
+				{
+					"name": "All entities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0OTYwMzA1LCJleHAiOjE2ODQ5NjAzNjV9.2H-6Invysf_8wmNC8rFcD8okm9-NImrZJxyvf1RIv5A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NjE4MjE0LCJleHAiOjE2ODQ2MTgyNzR9.w5uqcpbhyWLwe0niRzDdQdlRivDuUZ1L1dQ_ezS6Rz0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"image\": \"https://www.flickr.com/photos/fidjie/5623756229\",\r\n    \"name\": \"Anger\",\r\n    \"age\": 15,\r\n    \"weight\": 25,\r\n    \"history\": \"He was also a temporary antagonist. He is one of the five emotions inside the mind of Riley Andersen\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/characters/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NjE4MTE3LCJleHAiOjE2ODQ2MTgxNzd9.KaCKILh3LcWOGUTStp3dDPuxGro5O4uLVAOlnad83Ps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 2,\r\n        \"image\": \"UPDATE\",\r\n        \"name\": \"UPDATE\",\r\n        \"age\": 1,\r\n        \"weight\": 1,\r\n        \"history\": \"UPDATE\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NjE4MjE0LCJleHAiOjE2ODQ2MTgyNzR9.w5uqcpbhyWLwe0niRzDdQdlRivDuUZ1L1dQ_ezS6Rz0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Character By MovieId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTE3MTgzLCJleHAiOjE2ODQ1MTcyNDN9.wwcQ9em3if9LcTszRYe3Jo-4d-e8dvlySpKhgJQKqx0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/findbymovie/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"findbymovie",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Age",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTI4OTM5LCJleHAiOjE2ODQ1Mjg5OTl9.Tq0XjfILjI0GSwxaKTBSxmRR0RNilp555LwbmxyWF2U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/findByRangeAge/1/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"findByRangeAge",
+								"1",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Weight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTI4OTM5LCJleHAiOjE2ODQ1Mjg5OTl9.Tq0XjfILjI0GSwxaKTBSxmRR0RNilp555LwbmxyWF2U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/findByWeight/1/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"findByWeight",
+								"1",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NjE4MjE0LCJleHAiOjE2ODQ2MTgyNzR9.w5uqcpbhyWLwe0niRzDdQdlRivDuUZ1L1dQ_ezS6Rz0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/findbyname/up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"findbyname",
+								"up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTI5MDIyLCJleHAiOjE2ODQ1MjkwODJ9.b6cdBPkS4Fcc7EVMrztxcu3wRLXT97K9Nna6DMjpjAk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Movie Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NjE4MjE0LCJleHAiOjE2ODQ2MTgyNzR9.w5uqcpbhyWLwe0niRzDdQdlRivDuUZ1L1dQ_ezS6Rz0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/characters/findbymovie/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characters",
+								"findbymovie",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "All entities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMxNjQ3LCJleHAiOjE2ODQ1MzE3MDd9.mBHJrVTd-eWQzfrK8ELHOnDrNCh6N2ILSk0qu8WxLa0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"a@example.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMxNjQ3LCJleHAiOjE2ODQ1MzE3MDd9.mBHJrVTd-eWQzfrK8ELHOnDrNCh6N2ILSk0qu8WxLa0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"id\":2,\r\n            \"image\":\"\",\r\n            \"title\":\"Updated\",\r\n            \"creationDate\":\"2023-04-23\",\r\n            \"qualification\":5\r\n        }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTE3NDIzLCJleHAiOjE2ODQ1MTc0ODN9.u0DI5tu244iUF24J0PjZBNOVUhqkzsMvJD2nTQ_XmYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 4,\r\n        \"image\": \"\",\r\n        \"title\": \"Irene, yo y mi otro yo\",\r\n        \"creationDate\": \"2023-04-23\",\r\n        \"qualification\": 5\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movies/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add character to movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTE3NTE4LCJleHAiOjE2ODQ1MTc1Nzh9.-5scSpKM1GUtfJCfgrYY3KsUHVTAvdKTBjwHPGGTePw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movies/2/characters/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"2",
+								"characters",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTI5MDk2LCJleHAiOjE2ODQ1MjkxNTZ9.hF3xW3EqeSxhty4eb0BQUGaL8TGHPhqJvTrhrFbzuXo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/movies/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Title",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMwMTg2LCJleHAiOjE2ODQ1MzAyNDZ9.xMA_DeOK63FJJBZgazTzUEza7Pt4L2FeyasY11Dc4bk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/movies/findbytitle/ins",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"findbytitle",
+								"ins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Genre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMwMTg2LCJleHAiOjE2ODQ1MzAyNDZ9.xMA_DeOK63FJJBZgazTzUEza7Pt4L2FeyasY11Dc4bk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/movies/findbygenre/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"findbygenre",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMwODI2LCJleHAiOjE2ODQ1MzA4ODZ9.T46UjRMzpK6wPE1HQfx9srclgvdDVlGMlo_8tMxblpY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/movies/findbydate/asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"findbydate",
+								"asc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disassociate Character  Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMwOTUxLCJleHAiOjE2ODQ1MzEwMTF9.o8_Ud23iksTGBxcfyReS6zq_AlL9A4EGLJz4vzl5j6s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/movies/2/characters/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"2",
+								"characters",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genre",
+			"item": [
+				{
+					"name": "All entities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMwOTUxLCJleHAiOjE2ODQ1MzEwMTF9.o8_Ud23iksTGBxcfyReS6zq_AlL9A4EGLJz4vzl5j6s\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/genres",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMwOTUxLCJleHAiOjE2ODQ1MzEwMTF9.o8_Ud23iksTGBxcfyReS6zq_AlL9A4EGLJz4vzl5j6s\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 1,\r\n        \"image\": \"img/genere/comedy\",\r\n        \"name\": \"Comedy\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTMxMDI5LCJleHAiOjE2ODQ1MzEwODl9.6ziOij7Xnw0gXlA34pQ__FSEdnWR43QbswjexE6hNKU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"id\": 4,\r\n    \"image\": \"\",\r\n    \"name\": \"Terror\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/genres/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Documentation",
+			"item": [
+				{
+					"name": "OpenApi",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTM5NzQyLCJleHAiOjE2ODQ1Mzk4MDJ9.Mw6G8WeLokqDyhFaUdykpZ4fYMMVgFNQSF3GkqTUHfk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/doc/swagger-ui.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"doc",
+								"swagger-ui.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg0NTM5NzQyLCJleHAiOjE2ODQ1Mzk4MDJ9.Mw6G8WeLokqDyhFaUdykpZ4fYMMVgFNQSF3GkqTUHfk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/swagger-ui/index.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"swagger-ui",
+								"index.html"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
