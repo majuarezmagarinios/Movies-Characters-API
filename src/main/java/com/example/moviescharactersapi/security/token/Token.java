@@ -1,6 +1,6 @@
 package com.example.moviescharactersapi.security.token;
 
-import com.example.moviescharactersapi.entity.User;
+import com.example.moviescharactersapi.security.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

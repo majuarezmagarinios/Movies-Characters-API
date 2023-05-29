@@ -1,12 +1,9 @@
-package com.example.moviescharactersapi.security.services;
+package com.example.moviescharactersapi.security.auth;
 
-import com.example.moviescharactersapi.entity.User;
-import com.example.moviescharactersapi.repository.UserRepository;
+import com.example.moviescharactersapi.security.user.Role;
+import com.example.moviescharactersapi.security.user.User;
+import com.example.moviescharactersapi.security.user.UserRepository;
 import com.example.moviescharactersapi.security.jwt.JwtServices;
-import com.example.moviescharactersapi.security.payload.AuthRequest;
-import com.example.moviescharactersapi.security.payload.AuthResponse;
-import com.example.moviescharactersapi.security.payload.RegisterRequest;
-import com.example.moviescharactersapi.util.AuthorityRol;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,7 +26,14 @@ public class AuthService {
         user.setLastname( request.getLastname() );
         user.setEmail( request.getEmail() );
         user.setPassword( passwordEncoder.encode( request.getPassword() ) );
-        user.setAuthorityRol( AuthorityRol.USER );
+
+
+
+        if ( request.getRole() == null ) {
+            request.setRole( Role.USER );
+        }
+
+        user.setRole( request.getRole() );
 
         repository.save( user );
 

@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class GenreController {
 
     private final GenreRepository genreRepository;
 
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     @PostMapping( value = "create")
     public ResponseEntity<Genre> create( @RequestBody GenreDTO genreDTO ) {
         Optional<Genre> genreOp = genreRepository.findById( genreDTO.getId() );
@@ -39,8 +41,8 @@ public class GenreController {
         }
     }
 
-
     @PutMapping
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Genre> update( @RequestBody GenreDTO genreDTO ) {
         Optional<Genre> genreOp = genreRepository.findById( genreDTO.getId() );
 

@@ -1,4 +1,4 @@
-package com.example.moviescharactersapi.repository;
+package com.example.moviescharactersapi.security.token;
 
 import com.example.moviescharactersapi.security.token.Token;
 import org.springframework.data.jpa.repository.JpaRepository;

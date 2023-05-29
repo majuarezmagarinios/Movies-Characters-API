@@ -1,4 +1,4 @@
-package com.example.moviescharactersapi.security.payload;
+package com.example.moviescharactersapi.security.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

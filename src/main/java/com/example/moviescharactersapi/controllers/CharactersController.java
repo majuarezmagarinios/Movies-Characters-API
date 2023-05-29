@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class CharactersController {
     private final MovieRepository movieRepository;
 
     @PostMapping( value = "create")
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Characters> create( @RequestBody CharactersDTO charactersDTO ) {
 
         Optional<Characters> chOp = charactersRepository.findById( charactersDTO.getId() );
@@ -45,6 +47,7 @@ public class CharactersController {
     }
 
     @PutMapping
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Characters> update( @RequestBody CharactersDTO characterDTO ) {
 
         Optional<Characters> chOp = charactersRepository.findById( characterDTO.getId() );
@@ -156,6 +159,7 @@ public class CharactersController {
     }
 
     @DeleteMapping( value = "/{id}")
+    @PreAuthorize( "hasRole('ADMIN')" )
     public ResponseEntity<Characters> deleteById( @PathVariable( "id") Long id ) {
 
         if ( charactersRepository.existsById( id ) ) {

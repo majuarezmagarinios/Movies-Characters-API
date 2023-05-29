@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -33,6 +34,7 @@ public class MovieController {
     private final MovieControllerService movieControllerService;
 
     @PostMapping( value = "create")
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Movie> create( @RequestBody MovieDTO moviesDTO ) {
         Optional<Movie> movieOp = movieRepository.findById( moviesDTO.getId() );
 
@@ -53,6 +55,7 @@ public class MovieController {
     }
 
     @PutMapping
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Movie> update( @RequestBody MovieDTO movieDTO ) {
 
         Optional<Movie> movieOp = movieRepository.findById( movieDTO.getId() );
@@ -112,6 +115,7 @@ public class MovieController {
     }
 
     @PostMapping( value = "/{movieId}/characters/{characterId}")
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Movie> addCharacterToMovie( @PathVariable Long movieId, @PathVariable( "characterId") Long characterId ) {
 
         Optional<Characters> characterOp = charactersRepository.findById( characterId );
@@ -133,6 +137,7 @@ public class MovieController {
     }
 
     @PutMapping( "/{movieId}/characters/{characterId}")
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Void> disassociateCharacterMovies( @PathVariable Long movieId, @PathVariable Long characterId ) {
 
         Optional<Movie> movieOp = movieRepository.findById( movieId );
@@ -185,6 +190,7 @@ public class MovieController {
 
 
     @DeleteMapping( value = "/{id}")
+    @PreAuthorize( "hasAnyRole('ADMIN', 'MANAGER')" )
     public ResponseEntity<Void> deleteById( @PathVariable Long id ) {
 
         if ( movieRepository.existsById( id ) ) {

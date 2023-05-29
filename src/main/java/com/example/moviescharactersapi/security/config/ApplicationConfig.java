@@ -1,6 +1,6 @@
 package com.example.moviescharactersapi.security.config;
 
-import com.example.moviescharactersapi.repository.UserRepository;
+import com.example.moviescharactersapi.security.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

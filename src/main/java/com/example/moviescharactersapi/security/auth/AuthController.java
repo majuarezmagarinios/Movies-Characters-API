@@ -1,11 +1,11 @@
-package com.example.moviescharactersapi.controllers;
+package com.example.moviescharactersapi.security.auth;
 
-import com.example.moviescharactersapi.entity.User;
-import com.example.moviescharactersapi.repository.UserRepository;
-import com.example.moviescharactersapi.security.payload.AuthRequest;
-import com.example.moviescharactersapi.security.payload.AuthResponse;
-import com.example.moviescharactersapi.security.payload.RegisterRequest;
-import com.example.moviescharactersapi.security.services.AuthService;
+import com.example.moviescharactersapi.security.user.User;
+import com.example.moviescharactersapi.security.user.UserRepository;
+import com.example.moviescharactersapi.security.auth.AuthRequest;
+import com.example.moviescharactersapi.security.auth.AuthResponse;
+import com.example.moviescharactersapi.security.auth.RegisterRequest;
+import com.example.moviescharactersapi.security.auth.AuthService;
 import com.example.moviescharactersapi.service.SendGridEmailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
