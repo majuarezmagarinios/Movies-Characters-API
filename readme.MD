@@ -8,33 +8,38 @@
 <h5> It allows to manage entities, persist them and obtain a robust security with Spring Security and JWT</h5>
 
 <h4> Main features: </h4>
-<ul>
+<ol>
   <li>
-    <b>Security:</b> uses Spring Security and JWT to ensure user authentication and enables registration (by sending a welcome email) and login.
+    <b><i>Security</i></b>  
+        <p>1.1 Secure user authentication using Spring Security.</p> 
+        <p>1.2 Generation and validation of JWT tokens to guarantee authorization. </p>
+        <p>1.3 Establishment of roles and privileges for users. </p>
+        <p>1.4 Restriction of access to resources according to the roles and privileges assigned. </p>
+        <p>1.5 Sending a welcome email to the user upon registration. </p>
   </li>
   
   <li>
-    <b>Entities:</b> Users can create and manage three main entities: Character, Movie, and Genre.
+    <i><b>Entities:</b></i> Users can create and manage three main entities: Character, Movie, and Genre.
   </li>
   
   <li>
-    <b>Persistence:</b> Entity data is stored in an SQL database for persistence.
+    <i><b>Persistence:</b></i> Entity data is stored in an SQL database for persistence.
   </li>
   
   <li>
-    <b>Relationships:</b> Users have the ability to relate existing or created entities. For example, characters can be
+    <i><b>Relationships:</b></i> Users have the ability to relate existing or created entities. For example, characters can be
       linked to movies, and the latter to genres.
   </li>
   
   <li>
-    <b>CRUD Operations:</b> The API provides basic create, read, update, and delete (CRUD) operations for parent entities.
+    <i><b>CRUD Operations:</b></i> The API provides basic create, read, update, and delete (CRUD) operations for parent entities.
   </li>
 
   <li>
-      <b>Advanced Filtering:</b> In addition to CRUD operations, the API allows users to filter desired information from the
+     <i><b>Advanced Filtering:</b></i> In addition to CRUD operations, the API allows users to filter desired information from the
         database, providing additional functionality to meet their specific needs.
   </li>
-</ul>
+</ol>
 
 <h3> <u>Technologies</u> 🛠️</h3>
 
