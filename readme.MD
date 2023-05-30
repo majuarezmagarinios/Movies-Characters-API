@@ -17,29 +17,41 @@
         <p>1.4 Restriction of access to resources according to the roles and privileges assigned. </p>
         <p>1.5 Sending a welcome email to the user upon registration. </p>
   </li>
-  
+
+  <br />
+
   <li>
     <i><b>Entities:</b></i> Users can create and manage three main entities: Character, Movie, and Genre.
   </li>
-  
+
+  <br />
+
   <li>
     <i><b>Persistence:</b></i> Entity data is stored in an SQL database for persistence.
   </li>
-  
+
+  <br />
+
   <li>
     <i><b>Relationships:</b></i> Users have the ability to relate existing or created entities. For example, characters can be
       linked to movies, and the latter to genres.
   </li>
-  
+
+  <br />
+
   <li>
     <i><b>CRUD Operations:</b></i> The API provides basic create, read, update, and delete (CRUD) operations for parent entities.
   </li>
+
+<br />
 
   <li>
      <i><b>Advanced Filtering:</b></i> In addition to CRUD operations, the API allows users to filter desired information from the
         database, providing additional functionality to meet their specific needs.
   </li>
 </ol>
+
+<br />
 
 <h3> <u>Technologies</u> 🛠️</h3>
 
@@ -54,6 +66,8 @@
   <li>Postman - <i>Document The API</i></li>
 </ul>
 
+<br />
+
 <h3> <u>Installation and Execution</u> 🔧</h3>
 
 <ol>
@@ -63,6 +77,8 @@
    https://github.com/majuarezmagarinios/moviesCharactersAPI.git
    ```
   </li>
+  <br />
+  <li>In the src\apiDocumentation folder there is a file that you can export to Postman where you will have all the http methods to test</li>
   <br />
   <li>You must create the application key of your email provider. For example for Gmail you can follow this link <a href="https://support.google.com/accounts/answer/185833?hl=es">Link.</a></li>
   <br />
