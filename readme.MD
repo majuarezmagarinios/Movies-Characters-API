@@ -1,4 +1,4 @@
-<h1> Movie Characters API </h1>
+<h1> Movies Characters API </h1>
 <p>  
  <img src="https://img.shields.io/badge/Status-Finished-green" alt="">
  <img src="https://img.shields.io/badge/Version-v1.0-blue" alt="">
