@@ -13,7 +13,7 @@
     <b><i>Security</i></b>  
         <p>1.1 Secure user authentication using Spring Security.</p> 
         <p>1.2 Generation and validation of JWT tokens to guarantee authorization. </p>
-        <p>1.3 Establishment of roles and privileges for users. </p>
+        <p>1.3 Establishment of roles and privileges for users (USER, ADMIN and MANAGER). </p>
         <p>1.4 Restriction of access to resources according to the roles and privileges assigned. </p>
         <p>1.5 Sending a welcome email to the user upon registration. </p>
   </li>
@@ -78,11 +78,17 @@
    ```
   </li>
   <br />
-  <li>In the src\apiDocumentation folder there is a file that you can export to Postman where you will have all the http methods to test</li>
+  <li>Create Schema with name "moviescharactersapi"</li>
+  <br />
+  <li>Change username and password in application.properties</li>
+  <br />
+  <li>When you register or log in correctly you will get a token with which you can access the endpoints according to your role and permissions</li>
+  <br />
+  <li>In the src\apiDocumentation folder there is a file that you can export to Postman where you will have all the http methods to test </li>
   <br />
   <li>You must create the application key of your email provider. For example for Gmail you can follow this link <a href="https://support.google.com/accounts/answer/185833?hl=es">Link.</a></li>
   <br />
-  <li>In the resources/application.properties folder, place the key generated in the previous point after the equals sign, in the property "spring.sendgrid.api-key=" (line 36). Save changes.</li>
+  <li>In the resources/application.properties file, place the key generated in the previous point after the equals sign, in the property "spring.sendgrid.api-key=" (line 36). Save changes.</li>
   <br />
   <li>Go to services/SendGrid mail Service and on line 22 replace "example@gmail.com" with your mail. Save changes.</li>
   <br />
